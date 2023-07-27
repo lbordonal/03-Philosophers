@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 15:32:59 by lbordona          #+#    #+#             */
-/*   Updated: 2023/07/27 20:17:15 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/07/27 21:05:10 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	input_check(int ac, char **av)
 	i = 0;
 	if (ft_is_all_digits(ac, av) == 0)
 		exit (0);
-	if (ac != 6)
+	if (ac < 5 || ac > 6)
 		return (0);
 	while (i < ac)
 	{
