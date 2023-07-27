@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 16:11:09 by lbordona          #+#    #+#             */
-/*   Updated: 2023/06/27 18:11:01 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/07/27 20:17:12 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,20 +43,32 @@ int	ft_isdigit(int c)
 		return (0);
 }
 
-int	ft_str_is_digit(char *str)
+int	ft_is_all_digits(int ac, char **av)
 {
 	int	i;
+	int	j;
 
-	i = 0;
-	if (str[i] == 43 || str[i] == 45)
-		i++;
-	while (str[i] != '\0')
+	i = 1;
+	while (i < ac)
 	{
-		if (str[i] < 48 || str[i] > 57)
-			return (0);
+		j = 0;
+		while (av[i][j] != '\0')
+		{
+			if (ft_isdigitorsignal(av[i][j]) == 0)
+			{
+				printf("%s\n", "Please, verify the input → All parameters must be positive numbers.");
+				return (0);
+			}
+			j++;
+		}
 		i++;
 	}
-	if ((str[0] == 43 || str[0] == 45) && i == 1)
-		return (0);
 	return (1);
+}
+
+int	ft_isdigitorsignal(char c)
+{
+	if ((c >= '0' && c <= '9') || (c == '-' || c == '+') || c == ' ')
+		return (1);
+	return (0);
 }
