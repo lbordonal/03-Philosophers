@@ -53,7 +53,7 @@ typedef struct s_main
 	t_philo			*philo;
 	pthread_t		orchestrator;
 	pthread_mutex_t	*forks;
-	phtread_mutex_t	write;
+	pthread_mutex_t	write;
 }					t_main;
 
 /* main.c: */
