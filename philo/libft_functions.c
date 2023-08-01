@@ -35,6 +35,23 @@ long	ft_atol(const char *str)
 	return (result * sign);
 }
 
+int	ft_atoi(char *str)
+{
+	int	result;
+
+	i = 0;
+	result = 0;
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		result = result * 10 + str[i] - '0';
+		i++;
+	}
+	if (result < 0 || ((str[i] < '0' || str[i] > '9') && str[i] != '\0')
+		|| result > INT_MAX)
+		return (0);
+	return (result);
+}
+
 int	ft_isdigit(int c)
 {
 	if (c >= 48 && c <= 57)

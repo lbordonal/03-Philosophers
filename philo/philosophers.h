@@ -56,12 +56,24 @@ typedef struct s_main
 	phtread_mutex_t	write;
 }					t_main;
 
+/* main.c: */
+
+
 /* philo.c: */
+int			input_philos(int ac, char **av, t_main *main);
+int			create_philos(t_main *main);
+void		start_philo(t_main *main, int i, int j);
+
+/* time.c: */
+long long	get_time(void);
+long long	delta_time(long long time);
+void		exec_action(long long time);
 
 /* libft_functions.c: */
-long	ft_atol(const char *str);
-int		ft_isdigit(int c);
-int		ft_is_all_digits(int ac, char **av);
-int		ft_isdigitorsignal(char c);
+long		ft_atol(const char *str);
+int			ft_atoi(char *str);
+int			ft_isdigit(int c);
+int			ft_is_all_digits(int ac, char **av);
+int			ft_isdigitorsignal(char c);
 
 #endif
