@@ -37,6 +37,7 @@ long	ft_atol(const char *str)
 
 int	ft_atoi(char *str)
 {
+	int	i;
 	int	result;
 
 	i = 0;
