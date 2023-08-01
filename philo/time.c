@@ -32,5 +32,4 @@ void	exec_action(long long time)
 	usleep(time * 1000);
 }
 
-/* tv_sec is in seconds, 1 second = 1000 milliseconds
-   tv_usec is in microseconds, 1 microsecond = 0.001 milliseconds /*
+/* tv_sec is in seconds, 1 second = 1000 milliseconds / tv_usec is in microseconds, 1 microsecond = 0.001 milliseconds /*

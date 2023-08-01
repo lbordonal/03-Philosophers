@@ -34,7 +34,7 @@ int	main(int ac, char **av)
 {
 	t_main	*main;
 
-	if (input_check(ac,av) == 0)
+	if (input_check(ac, av) == 0)
 	{
 		printf("%s\n", "Please, verify the input → [Number of philosophers] [Time to die] [Time to eat] [Time to sleep] [Eat times]");
 		return (0);
@@ -42,4 +42,3 @@ int	main(int ac, char **av)
 	input_philos(ac, av, main);
 	printf("%i\n", main->input.num_philo);
 }
-

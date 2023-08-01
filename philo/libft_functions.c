@@ -74,7 +74,8 @@ int	ft_is_all_digits(int ac, char **av)
 		{
 			if (ft_isdigitorsignal(av[i][j]) == 0)
 			{
-				printf("%s\n", "Please, verify the input → All parameters must be positive numbers.");
+				printf("%s\n", "Please, verify the input →
+					All parameters must be positive numbers.");
 				return (0);
 			}
 			j++;

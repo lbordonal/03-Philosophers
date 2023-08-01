@@ -24,7 +24,8 @@ int	create_threads(t_main *main)
 	while (i < main->input.num_philo)
 	{
 		main->n_thread = i;
-		if (pthread_create(&main->philo[i].thread, NULL, &routine, (void *) main) != 0)
+		if (pthread_create(&main->philo[i].thread, NULL,
+			&routine, (void *) main) != 0)
 			return (0);
 		i++;
 		usleep(1000);
