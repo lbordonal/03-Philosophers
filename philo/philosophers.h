@@ -60,7 +60,7 @@ typedef struct s_main
 
 
 /* philo.c: */
-int			input_philos(int ac, char **av, t_main *main);
+void		input_philos(int ac, char **av, t_main *main);
 int			create_philos(t_main *main);
 void		start_philo(t_main *main, int i, int j);
 

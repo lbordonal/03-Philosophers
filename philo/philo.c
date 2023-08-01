@@ -12,7 +12,7 @@
 
 #include "philosophers.h"
 
-int	input_philos(int ac, char **av, t_main *main)
+void	input_philos(int ac, char **av, t_main *main)
 {
 	if (ac == 5 || ac == 6)
 	{
@@ -24,9 +24,9 @@ int	input_philos(int ac, char **av, t_main *main)
 			main->input.num_of_times_eat = ft_atoi(av[5]);
 		else
 			main->input.num_of_times_eat = -1;
-		return (1);
+		exit (0);
 	}
-	return (0);
+	exit (0);
 }
 
 int	create_philos(t_main *main)
