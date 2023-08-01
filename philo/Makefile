@@ -16,7 +16,10 @@ RM = rm -rf
 
 NAME = philo
 
-SRCS = philo.c \
+SRCS = main.c \
+	philo.c \
+	time.c \
+	utils.c \
 	libft_functions.c
 
 OBJS = $(SRCS:%.c=%.o)
