@@ -64,6 +64,11 @@ void		input_philos(int ac, char **av, t_main *main);
 int			create_philos(t_main *main);
 void		start_philo(t_main *main, int i, int j);
 
+/* threads.c: */
+int			create_threads(t_main *main);
+int			join_threads(t_main *main);
+int			destroy_threads(t_main *main);
+
 /* time.c: */
 long long	get_time(void);
 long long	delta_time(long long time);

@@ -18,6 +18,7 @@ NAME = philo
 
 SRCS = main.c \
 	philo.c \
+	threads.c \
 	time.c \
 	utils.c \
 	libft_functions.c
