@@ -69,6 +69,10 @@ int			create_threads(t_main *main);
 int			join_threads(t_main *main);
 int			destroy_threads(t_main *main);
 
+/* forks.c: */
+int			create_forks(t_main *main);
+void		unlock_forks(t_main *main);
+
 /* time.c: */
 long long	get_time(void);
 long long	delta_time(long long time);
