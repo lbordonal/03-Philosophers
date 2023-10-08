@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 15:32:59 by lbordona          #+#    #+#             */
-/*   Updated: 2023/10/03 10:55:20 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/10/08 20:45:00 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,42 @@ int	input_check(int ac, char **av)
 
 int	main(int ac, char **av)
 {
-	t_main	*main;
+	t_main	main;
 
 	if (input_check(ac, av) == 0)
 	{
-		printf("%s\n", "Please, verify the input → ./philo <Number of philosophers> <Time to die> <Time to eat> <Time to sleep> <Eat times>");
+		printf("%s\n", "Please, verify the input → ./philo [Number of philosophers] [Time to die] [Time to eat] [Time to sleep] [Eat times]");
 		return (0);
 	}
-	input_philos(ac, av, main);
+	if (input_philos(ac, av, &main) == 0)
+	{
+		if (create_philos(&main) == 0)
+			return (1);
+		if (create_forks(&main) == 0)
+			return (1);
+		if (main.input.num_philo == 1)
+		{
+			if (lonely_philo(&main) == 0)
+				return (1);
+			return (0);
+		}
+		if (create_threads(&main) == 0)
+			return (1);
+		if (destroy_threads(&main) == 0)
+			return (1);
+		philo_free(&main);
+		return (0);
+	}
+}
+
+int	lonely_philo(t_main *main)
+{
+	if (pthread_mutex_init(&main->write, NULL) != 0)
+		return (0);
+	main->t0 = get_time();
+	print_philo(main, 1, B_BLUE, "has taken a fork");
+	exec_action(main->input.time_to_die);
+	print_philo(main, 1, PINK, "died");
+	philo_free(main);
+	return (1);
 }

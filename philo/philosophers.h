@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 15:33:54 by lbordona          #+#    #+#             */
-/*   Updated: 2023/07/27 20:13:52 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/10/08 20:38:33 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,10 +65,11 @@ typedef struct s_main
 }					t_main;
 
 /* main.c: */
-
+int			input_check(int ac, char **av);
+int			lonely_philo(t_main *main);
 
 /* philo.c: */
-void		input_philos(int ac, char **av, t_main *main);
+int			input_philos(int ac, char **av, t_main *main);
 int			create_philos(t_main *main);
 void		start_philo(t_main *main, int i, int j);
 
@@ -80,6 +81,9 @@ int			destroy_threads(t_main *main);
 /* forks.c: */
 int			create_forks(t_main *main);
 void		unlock_forks(t_main *main);
+
+/* free.c: */
+void		philo_free(t_main *main);
 
 /* time.c: */
 long long	get_time(void);

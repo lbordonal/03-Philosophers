@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   handling_philos.c                                  :+:      :+:    :+:   */
+/*   philo.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 11:09:33 by lbordona          #+#    #+#             */
-/*   Updated: 2023/08/01 11:09:33 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/10/08 20:27:52 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philosophers.h"
 
-void	input_philos(int ac, char **av, t_main *main)
+int	input_philos(int ac, char **av, t_main *main)
 {
 	if (ac == 5 || ac == 6)
 	{
@@ -24,9 +24,9 @@ void	input_philos(int ac, char **av, t_main *main)
 			main->input.num_of_times_eat = ft_atoi(av[5]);
 		else
 			main->input.num_of_times_eat = -1;
-		exit (0);
+		return (0);
 	}
-	exit (0);
+	return (1);
 }
 
 int	create_philos(t_main *main)

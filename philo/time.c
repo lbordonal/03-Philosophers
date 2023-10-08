@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 11:20:15 by lbordona          #+#    #+#             */
-/*   Updated: 2023/08/01 11:20:15 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/10/08 20:40:41 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,3 @@ void	exec_action(long long time)
 {
 	usleep(time * 1000);
 }
-
-/* tv_sec is in seconds, 1 second = 1000 milliseconds / tv_usec is in microseconds, 1 microsecond = 0.001 milliseconds /*

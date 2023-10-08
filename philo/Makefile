@@ -6,7 +6,7 @@
 #    By: lbordona <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/27 15:34:03 by lbordona          #+#    #+#              #
-#    Updated: 2023/06/27 18:11:07 by lbordona         ###   ########.fr        #
+#    Updated: 2023/10/08 20:37:04 by lbordona         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,10 +20,11 @@ SRCS = main.c \
 	philo.c \
 	threads.c \
 	time.c \
-	utils.c \
+	free.c \
 	libft_functions.c \
 	actions.c \
-	routine.c
+	routine.c \
+	forks.c
 
 OBJS = $(SRCS:%.c=%.o)
 
