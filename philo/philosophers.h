@@ -20,6 +20,14 @@
 # include <sys/time.h>
 # include <limits.h>
 
+# define RESET "\e[0m"
+# define PINK "\e[0;38;5;199m"
+# define GREEN "\e[0;32m"
+# define BLUE "\e[0;34m"
+# define G_BLUE "\e[0;38;5;24m"
+# define B_BLUE "\e[1;34m"
+# define G_CYAN "\e[0;38;5;44m"
+
 typedef struct s_input
 {
 	int	num_philo;
@@ -77,6 +85,19 @@ void		unlock_forks(t_main *main);
 long long	get_time(void);
 long long	delta_time(long long time);
 void		exec_action(long long time);
+
+/* actions.c: */
+int			philo_eating(t_main *main, int i);
+int			philo_sleeping(t_main *main, int i);
+int			philo_thinking(t_main *main, int i);
+int			philo_dead(t_main *main, int *i);
+int			drop_forks(t_main *main, int i);
+
+/* routine.c: */
+void		*routine(void *args);
+int			routine_execute(t_main *main, int i);
+void		*checker(void *args);
+int			print_philo(t_main *main, int id, char *color, char *status);
 
 /* libft_functions.c: */
 long		ft_atol(const char *str);

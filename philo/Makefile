@@ -21,7 +21,9 @@ SRCS = main.c \
 	threads.c \
 	time.c \
 	utils.c \
-	libft_functions.c
+	libft_functions.c \
+	actions.c \
+	routine.c
 
 OBJS = $(SRCS:%.c=%.o)
 
