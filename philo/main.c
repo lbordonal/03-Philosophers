@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 15:32:59 by lbordona          #+#    #+#             */
-/*   Updated: 2023/10/08 20:45:00 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/10/08 21:08:11 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,9 +65,9 @@ int	lonely_philo(t_main *main)
 	if (pthread_mutex_init(&main->write, NULL) != 0)
 		return (0);
 	main->t0 = get_time();
-	print_philo(main, 1, B_BLUE, "has taken a fork");
+	print_philo(main, 1, BLUE, "has taken a fork");
 	exec_action(main->input.time_to_die);
-	print_philo(main, 1, PINK, "died");
+	print_philo(main, 1, RED, "died");
 	philo_free(main);
 	return (1);
 }

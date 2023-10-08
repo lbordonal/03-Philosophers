@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 15:33:54 by lbordona          #+#    #+#             */
-/*   Updated: 2023/10/08 20:38:33 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/10/08 21:16:55 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,11 @@
 # include <limits.h>
 
 # define RESET "\e[0m"
-# define PINK "\e[0;38;5;199m"
+# define RED "\e[0;31m"
 # define GREEN "\e[0;32m"
 # define BLUE "\e[0;34m"
-# define G_BLUE "\e[0;38;5;24m"
-# define B_BLUE "\e[1;34m"
-# define G_CYAN "\e[0;38;5;44m"
+# define PINK "\e[0;38;5;199m"
+# define G_CYAN "\e[0;36m"
 
 typedef struct s_input
 {
