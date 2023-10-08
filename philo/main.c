@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 15:32:59 by lbordona          #+#    #+#             */
-/*   Updated: 2023/10/08 21:08:11 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/10/08 21:33:43 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,20 @@ int	input_check(int ac, char **av)
 	if (ft_is_all_digits(ac, av) == 0)
 		exit (0);
 	if (ac < 5 || ac > 6)
+	{
+		printf("%s", "Please, verify the input → ./philo ");
+		printf("%s", "[Number of philosophers] [Time to die] [Time to eat] ");
+		printf("%s\n", "[Time to sleep] [Eat times]");
 		return (0);
+	}
 	while (i < ac)
 	{
 		if (ft_atol(av[i]) > 2147483647 || ft_atol(av[i]) < 0)
+		{
+			printf("%s", "Please, verify the input → All parameters must be ");
+			printf("%s\n", "greater than zero and lower than INT_MAX.");
 			return (0);
+		}
 		i++;
 	}
 	return (1);
@@ -35,10 +44,7 @@ int	main(int ac, char **av)
 	t_main	main;
 
 	if (input_check(ac, av) == 0)
-	{
-		printf("%s\n", "Please, verify the input → ./philo [Number of philosophers] [Time to die] [Time to eat] [Time to sleep] [Eat times]");
 		return (0);
-	}
 	if (input_philos(ac, av, &main) == 0)
 	{
 		if (create_philos(&main) == 0)

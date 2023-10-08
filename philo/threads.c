@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 12:49:23 by lbordona          #+#    #+#             */
-/*   Updated: 2023/08/01 12:49:23 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/10/08 21:24:55 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	create_threads(t_main *main)
 	{
 		main->n_thread = i;
 		if (pthread_create(&main->philo[i].thread, NULL,
-			&routine, (void *) main) != 0)
+				&routine, (void *) main) != 0)
 			return (0);
 		i++;
 		usleep(1000);

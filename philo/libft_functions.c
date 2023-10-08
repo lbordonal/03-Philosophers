@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 16:11:09 by lbordona          #+#    #+#             */
-/*   Updated: 2023/10/08 20:43:35 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/10/08 21:32:20 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,8 @@ int	ft_is_all_digits(int ac, char **av)
 		{
 			if (ft_isdigitorsignal(av[i][j]) == 0)
 			{
-				printf("%s\n", "Please, verify the input →	All parameters must be positive numbers.");
+				printf("%s", "Please, verify the input → ");
+				printf("%s\n", "All parameters must be positive numbers.");
 				return (0);
 			}
 			j++;
