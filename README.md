@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/lbordonal/lbordonal/blob/main/.images/42_Cursus_-_Philosophers.png">
+  <img src="https://github.com/lbordonal/lbordonal/blob/main/.titles/Philosophers.png">
 </p>
 
 <p align="center">
