@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 19:57:15 by lbordona          #+#    #+#             */
-/*   Updated: 2023/10/08 21:16:44 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/12/04 11:22:39 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,8 @@ int	print_philo(t_main *main, int id, char *color, char *status)
 		return (0);
 	}
 	else
-		printf("[%s%-4lld ms]    [%d] %-30s%s\n", color, now, id, status, RESET);
+		printf("[%s%-4lld ms]    [%d] %-30s%s\n", color, now, id,
+			status, RESET);
 	pthread_mutex_unlock(&main->write);
 	return (1);
 }
