@@ -6,7 +6,7 @@
 #    By: lbordona <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/27 15:34:03 by lbordona          #+#    #+#              #
-#    Updated: 2023/10/08 20:37:04 by lbordona         ###   ########.fr        #
+#    Updated: 2023/12/04 20:42:38 by lbordona         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,3 +40,5 @@ fclean: clean
 	@$(RM) $(NAME)
 
 re: fclean all
+
+.SILENT:
