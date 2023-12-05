@@ -1,42 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   forks.c                                            :+:      :+:    :+:   */
+/*   routine.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/05 11:49:15 by lbordona          #+#    #+#             */
-/*   Updated: 2023/12/05 14:57:02 by lbordona         ###   ########.fr       */
+/*   Created: 2023/12/05 15:39:53 by lbordona          #+#    #+#             */
+/*   Updated: 2023/12/05 15:41:46 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philosophers.h"
 
-int	create_forks(t_main *main)
+void	*routine(void *args)
 {
-	int	i;
 
-	i = 0;
-	main->forks = malloc (sizeof(pthread_mutex_t) * (main->input.num_philo + 1));
-	if (main->forks == NULL)
-		return (0);
-	while (i < main->input.num_philo)
-	{
-		if (pthread_mutex_init(&main->forks[i], NULL) != 0)
-			return (0);
-		i++;
-	}
-	return (1);
 }
 
-void	unlock_forks(t_main *main)
+int	routine_execute(t_main *main, int i)
 {
-	int	i;
 
-	i = 0;
-	while (i < main->input.num_philo)
-	{
-		pthread_mutex_unlock(&main->forks[i]);
-		i++;
-	}
+}
+
+void	*checker(void *args)
+{
+
+}
+
+int	print_philo(t_main *main, int id, char *color, char *status)
+{
+
 }

@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 10:10:34 by lbordona          #+#    #+#             */
-/*   Updated: 2023/12/05 11:55:56 by lbordona         ###   ########.fr       */
+/*   Updated: 2023/12/05 15:40:56 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,11 @@ int		create_philos(t_main *main);
 /* forks.c: */
 int		create_forks(t_main *main);
 void	unlock_forks(t_main *main);
+
+/* threads.c: */
+int		create_threads(t_main *main);
+int		join_threads(t_main *main);
+int		destroy_threads(t_main *main);
 
 /* libft_functions.c: */
 long	ft_atol(const char *str);
