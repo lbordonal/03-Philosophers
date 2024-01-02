@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 10:10:34 by lbordona          #+#    #+#             */
-/*   Updated: 2023/12/05 15:40:56 by lbordona         ###   ########.fr       */
+/*   Updated: 2024/01/02 14:13:53 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,28 +64,33 @@ typedef struct s_main
 }		t_main;
 
 /* main.c: */
-int		input_check(int ac, char **av);
-int		input_philos(int ac, char **av, t_main *main);
-int		lonely_philo(t_main *main);
+int			input_check(int ac, char **av);
+int			input_philos(int ac, char **av, t_main *main);
+int			lonely_philo(t_main *main);
 
 /* philo.c: */
-void	start_philo(t_main *main, int i, int j);
-int		create_philos(t_main *main);
+void		start_philo(t_main *main, int i, int j);
+int			create_philos(t_main *main);
 
 /* forks.c: */
-int		create_forks(t_main *main);
-void	unlock_forks(t_main *main);
+int			create_forks(t_main *main);
+void		unlock_forks(t_main *main);
 
 /* threads.c: */
-int		create_threads(t_main *main);
-int		join_threads(t_main *main);
-int		destroy_threads(t_main *main);
+int			create_threads(t_main *main);
+int			join_threads(t_main *main);
+int			destroy_threads(t_main *main);
+
+/* time.c: */
+long long	get_time(void);
+long long	delta_time(long long time);
+void		exec_action(long long time);
 
 /* libft_functions.c: */
-long	ft_atol(const char *str);
-int		ft_atoi(char *str);
-int		ft_isdigit(int c);
-int		ft_is_all_digits(int ac, char **av);
-int		ft_isdigitorsignal(char c);
+long		ft_atol(const char *str);
+int			ft_atoi(char *str);
+int			ft_isdigit(int c);
+int			ft_is_all_digits(int ac, char **av);
+int			ft_isdigitorsignal(char c);
 
 #endif
