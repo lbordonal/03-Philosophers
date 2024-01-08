@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/27 15:32:59 by lbordona          #+#    #+#             */
-/*   Updated: 2023/10/08 21:33:43 by lbordona         ###   ########.fr       */
+/*   Created: 2023/12/05 10:30:39 by lbordona          #+#    #+#             */
+/*   Updated: 2023/12/05 11:41:59 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,23 @@ int	input_check(int ac, char **av)
 	return (1);
 }
 
+int	input_philos(int ac, char **av, t_main *main)
+{
+	if (ac == 5 || ac == 6)
+	{
+		main->input.num_philo = ft_atoi(av[1]);
+		main->input.ttd = ft_atoi(av[2]);
+		main->input.tte = ft_atoi(av[3]);
+		main->input.tts = ft_atoi(av[4]);
+		if (ac == 6)
+			main->input.num_of_times_eat = ft_atoi(av[5]);
+		else
+			main->input.num_of_times_eat = -1;
+		return (0);
+	}
+	return (1);
+}
+
 int	main(int ac, char **av)
 {
 	t_main	main;
@@ -51,7 +68,7 @@ int	main(int ac, char **av)
 			return (1);
 		if (create_forks(&main) == 0)
 			return (1);
-		if (main.input.num_philo == 1)
+		if (main.input.num_of_times_eat == 1)
 		{
 			if (lonely_philo(&main) == 0)
 				return (1);
@@ -72,7 +89,7 @@ int	lonely_philo(t_main *main)
 		return (0);
 	main->t0 = get_time();
 	print_philo(main, 1, BLUE, "has taken a fork");
-	exec_action(main->input.time_to_die);
+	exec_action(main->input.ttd);
 	print_philo(main, 1, RED, "died");
 	philo_free(main);
 	return (1);

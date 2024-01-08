@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/02 15:50:53 by lbordona          #+#    #+#             */
-/*   Updated: 2023/10/08 21:06:23 by lbordona         ###   ########.fr       */
+/*   Created: 2024/01/08 18:39:24 by lbordona          #+#    #+#             */
+/*   Updated: 2024/01/08 19:30:37 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ int	philo_eating(t_main *main, int i)
 		return (0);
 	if (print_philo(main, main->philo[i].id, GREEN, "is eating") == 0)
 		return (0);
-	main->philo[i].time_to_die = get_time();
-	exec_action(main->input.time_to_eat);
+	main->philo[i].ttd = get_time ();
+	exec_action(main->input.tte);
 	drop_forks(main, i);
 	return (1);
 }
@@ -34,7 +34,7 @@ int	philo_sleeping(t_main *main, int i)
 {
 	if (print_philo(main, main->philo[i].id, PINK, "is sleeping") == 0)
 		return (0);
-	exec_action(main->input.time_to_sleep);
+	exec_action(main->input.tts);
 	return (1);
 }
 
@@ -51,8 +51,8 @@ int	philo_dead(t_main *main, int *i)
 
 	if (*i == main->input.num_philo)
 		*i = 0;
-	time = delta_time(main->philo[*i].time_to_die);
-	if (time > main->input.time_to_die)
+	time = delta_time(main->philo[*i].ttd);
+	if (time > main->input.ttd)
 	{
 		print_philo(main, main->philo[*i].id, RED, "died");
 		main->philo_dead = 1;

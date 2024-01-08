@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/27 15:33:54 by lbordona          #+#    #+#             */
-/*   Updated: 2023/10/08 21:16:55 by lbordona         ###   ########.fr       */
+/*   Created: 2023/12/05 10:10:34 by lbordona          #+#    #+#             */
+/*   Updated: 2024/01/08 19:16:58 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,9 @@
 typedef struct s_input
 {
 	int	num_philo;
-	int	time_to_die;
-	int	time_to_eat;
-	int	time_to_sleep;
+	int	ttd;
+	int	tte;
+	int	tts;
 	int	num_of_times_eat;
 }		t_input;
 
@@ -46,10 +46,10 @@ typedef struct s_philo
 {
 	int			id;
 	int			num_of_times_ate;
-	long long	time_to_die;
+	long long	ttd;
 	t_fork		fork;
 	pthread_t	thread;
-}				t_philo;
+}		t_philo;
 
 typedef struct s_main
 {
@@ -61,21 +61,16 @@ typedef struct s_main
 	pthread_t		orchestrator;
 	pthread_mutex_t	*forks;
 	pthread_mutex_t	write;
-}					t_main;
+}		t_main;
 
 /* main.c: */
 int			input_check(int ac, char **av);
+int			input_philos(int ac, char **av, t_main *main);
 int			lonely_philo(t_main *main);
 
 /* philo.c: */
-int			input_philos(int ac, char **av, t_main *main);
-int			create_philos(t_main *main);
 void		start_philo(t_main *main, int i, int j);
-
-/* threads.c: */
-int			create_threads(t_main *main);
-int			join_threads(t_main *main);
-int			destroy_threads(t_main *main);
+int			create_philos(t_main *main);
 
 /* forks.c: */
 int			create_forks(t_main *main);
@@ -83,11 +78,6 @@ void		unlock_forks(t_main *main);
 
 /* free.c: */
 void		philo_free(t_main *main);
-
-/* time.c: */
-long long	get_time(void);
-long long	delta_time(long long time);
-void		exec_action(long long time);
 
 /* actions.c: */
 int			philo_eating(t_main *main, int i);
@@ -101,6 +91,16 @@ void		*routine(void *args);
 int			routine_execute(t_main *main, int i);
 void		*checker(void *args);
 int			print_philo(t_main *main, int id, char *color, char *status);
+
+/* threads.c: */
+int			create_threads(t_main *main);
+int			join_threads(t_main *main);
+int			destroy_threads(t_main *main);
+
+/* time.c: */
+long long	get_time(void);
+long long	delta_time(long long time);
+void		exec_action(long long time);
 
 /* libft_functions.c: */
 long		ft_atol(const char *str);
