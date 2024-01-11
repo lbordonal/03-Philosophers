@@ -6,11 +6,17 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 10:30:39 by lbordona          #+#    #+#             */
-/*   Updated: 2023/12/05 11:41:59 by lbordona         ###   ########.fr       */
+/*   Updated: 2024/01/11 15:08:12 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philosophers.h"
+
+void	philo_free(t_main *main)
+{
+	free(main->philo);
+	free(main->forks);
+}
 
 int	input_check(int ac, char **av)
 {
@@ -68,7 +74,7 @@ int	main(int ac, char **av)
 			return (1);
 		if (create_forks(&main) == 0)
 			return (1);
-		if (main.input.num_of_times_eat == 1)
+		if (main.input.num_philo == 1)
 		{
 			if (lonely_philo(&main) == 0)
 				return (1);

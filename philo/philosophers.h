@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 10:10:34 by lbordona          #+#    #+#             */
-/*   Updated: 2024/01/08 19:16:58 by lbordona         ###   ########.fr       */
+/*   Updated: 2024/01/11 14:51:34 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,7 @@ typedef struct s_main
 }		t_main;
 
 /* main.c: */
+void		philo_free(t_main *main);
 int			input_check(int ac, char **av);
 int			input_philos(int ac, char **av, t_main *main);
 int			lonely_philo(t_main *main);
@@ -75,9 +76,6 @@ int			create_philos(t_main *main);
 /* forks.c: */
 int			create_forks(t_main *main);
 void		unlock_forks(t_main *main);
-
-/* free.c: */
-void		philo_free(t_main *main);
 
 /* actions.c: */
 int			philo_eating(t_main *main, int i);

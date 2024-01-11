@@ -6,7 +6,7 @@
 #    By: lbordona <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/27 15:34:03 by lbordona          #+#    #+#              #
-#    Updated: 2023/12/04 20:42:38 by lbordona         ###   ########.fr        #
+#    Updated: 2024/01/11 14:54:23 by lbordona         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,6 @@ SRCS = main.c \
 	philo.c \
 	threads.c \
 	time.c \
-	free.c \
 	libft_functions.c \
 	actions.c \
 	routine.c \
