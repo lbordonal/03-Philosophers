@@ -6,12 +6,12 @@
 #    By: lbordona <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/27 15:34:03 by lbordona          #+#    #+#              #
-#    Updated: 2024/01/11 19:20:04 by lbordona         ###   ########.fr        #
+#    Updated: 2024/01/17 20:53:51 by lbordona         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = cc -g
-CFLAGS = -Wall -Wextra -Werror -pthread
+CFLAGS = -Wall -Wextra -Werror -pthread -fsanitize=address
 RM = rm -rf
 
 NAME = philo
