@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 10:30:39 by lbordona          #+#    #+#             */
-/*   Updated: 2024/01/11 15:08:12 by lbordona         ###   ########.fr       */
+/*   Updated: 2024/01/18 01:40:13 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 
 void	philo_free(t_main *main)
 {
-	free(main->philo);
 	free(main->forks);
+	free(main->philo);
+	return ;
 }
 
 int	input_check(int ac, char **av)
