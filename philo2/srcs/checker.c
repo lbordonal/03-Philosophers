@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 00:42:54 by lbordona          #+#    #+#             */
-/*   Updated: 2024/01/18 01:21:21 by lbordona         ###   ########.fr       */
+/*   Updated: 2024/01/22 14:15:41 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	check_philo_dead(t_main *main)
 {
-	int	i;
-	long long now;
+	int			i;
+	long long	now;
 
 	i = 0;
 	now = get_time();
@@ -65,6 +65,3 @@ void	*checker(void *arg)
 	}
 	return (NULL);
 }
-
-
-

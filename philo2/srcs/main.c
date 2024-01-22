@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 21:25:38 by lbordona          #+#    #+#             */
-/*   Updated: 2024/01/18 01:16:14 by lbordona         ###   ########.fr       */
+/*   Updated: 2024/01/22 14:15:16 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,8 @@ int	input_checker(char **av)
 		{
 			if (!ft_isdigit(av[i][j]))
 			{
-				printf("%s", "Please, verify the input → All parameters must be ");
+				printf("%s", "Please, verify the input → All parameters");
+				printf("%s", "must be ");
 				printf("%s\n", "numbers and equal or greater than zero.");
 				return (0);
 			}
@@ -51,8 +52,8 @@ int	input_philo(int ac, char **av, t_main *main)
 	main->t0 = get_time();
 	pthread_mutex_init(&main->print, NULL);
 	pthread_mutex_init(&main->mutex, NULL);
-	if (main->num_philo == 0 || main->ttd == 0 || main->tte == 0 ||
-		main->tts == 0 || main->num_of_times_eat == 0)
+	if (main->num_philo == 0 || main->ttd == 0 || main->tte == 0
+		|| main->tts == 0 || main->num_of_times_eat == 0)
 	{
 		printf("%s", "Please, verify the input → ./philo ");
 		printf("%s", "[Number of philosophers] [Time to die] [Time to eat] ");
@@ -66,14 +67,14 @@ int	input_philo(int ac, char **av, t_main *main)
 
 int	input_philo_continue(t_main *main)
 {
-	//main->forks = start_forks(main->num_philo);
-	if (!(main->forks = start_forks(main->num_philo)))
+	main->forks = start_forks(main->num_philo);
+	if (!main->forks)
 	{
 		free(main->forks);
 		return (0);
 	}
-	//main->philo = start_philos(main);
-	if (!(main->philo = start_philos(main)))
+	main->philo = start_philos(main);
+	if (!main->philo)
 	{
 		free(main->philo);
 		return (0);

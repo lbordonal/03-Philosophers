@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 00:14:33 by lbordona          #+#    #+#             */
-/*   Updated: 2024/01/18 01:18:32 by lbordona         ###   ########.fr       */
+/*   Updated: 2024/01/22 14:20:06 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 int	grab_forks(t_philo *philo)
 {
 	pthread_mutex_lock(&philo->main->mutex);
-	if (philo->main->dead >= 1 || philo->main->all_ate == philo->main->num_philo)
+	if (philo->main->dead >= 1
+		|| philo->main->all_ate == philo->main->num_philo)
 	{
 		pthread_mutex_unlock(&philo->main->mutex);
 		return (1);
@@ -38,39 +39,40 @@ int	grab_forks(t_philo *philo)
 	return (0);
 }
 
-int	is_eating(t_philo *philo)
+int	is_eating(t_philo *ph)
 {
-	pthread_mutex_lock(&philo->main->mutex);
-	if (philo->main->dead >= 1 || philo->main->all_ate == philo->main->num_philo)
+	pthread_mutex_lock(&ph->main->mutex);
+	if (ph->main->dead >= 1 || ph->main->all_ate == ph->main->num_philo)
 	{
-		pthread_mutex_unlock(&philo->main->mutex);
-		pthread_mutex_unlock(philo->l_fork);
-		pthread_mutex_unlock(philo->r_fork);
+		pthread_mutex_unlock(&ph->main->mutex);
+		pthread_mutex_unlock(ph->l_fork);
+		pthread_mutex_unlock(ph->r_fork);
 		return (1);
 	}
-	pthread_mutex_unlock(&philo->main->mutex);
-	pthread_mutex_lock(&philo->reaper);
-	philo->last_meal = get_time();
-	print_philo_status(philo, "is eating.");
-	pthread_mutex_lock(&philo->main->mutex);
-	philo->num_of_times_ate++;
-	if (philo->main->num_of_times_eat != -1)
+	pthread_mutex_unlock(&ph->main->mutex);
+	pthread_mutex_lock(&ph->reaper);
+	ph->last_meal = get_time();
+	print_philo_status(ph, "is eating.");
+	pthread_mutex_lock(&ph->main->mutex);
+	ph->num_of_times_ate++;
+	if (ph->main->num_of_times_eat != -1)
 	{
-		if (philo->main->num_of_times_eat == philo->num_of_times_ate)
-			philo->main->all_ate++;
+		if (ph->main->num_of_times_eat == ph->num_of_times_ate)
+			ph->main->all_ate++;
 	}
-	pthread_mutex_unlock(&philo->main->mutex);
-	pthread_mutex_unlock(&philo->reaper);
-	exec_action(philo->main->tte);
-	pthread_mutex_unlock(philo->l_fork);
-	pthread_mutex_unlock(philo->r_fork);
+	pthread_mutex_unlock(&ph->main->mutex);
+	pthread_mutex_unlock(&ph->reaper);
+	exec_action(ph->main->tte);
+	pthread_mutex_unlock(ph->l_fork);
+	pthread_mutex_unlock(ph->r_fork);
 	return (0);
 }
 
 int	is_sleeping(t_philo *philo)
 {
 	pthread_mutex_lock(&philo->main->mutex);
-	if (philo->main->dead >= 1 || philo->main->all_ate == philo->main->num_philo)
+	if (philo->main->dead >= 1
+		|| philo->main->all_ate == philo->main->num_philo)
 	{
 		pthread_mutex_unlock(&philo->main->mutex);
 		return (1);
@@ -84,7 +86,8 @@ int	is_sleeping(t_philo *philo)
 int	is_thinking(t_philo *philo)
 {
 	pthread_mutex_lock(&philo->main->mutex);
-	if (philo->main->dead >= 1 || philo->main->all_ate == philo->main->num_philo)
+	if (philo->main->dead >= 1
+		|| philo->main->all_ate == philo->main->num_philo)
 	{
 		pthread_mutex_unlock(&philo->main->mutex);
 		return (1);

@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 23:46:54 by lbordona          #+#    #+#             */
-/*   Updated: 2024/01/18 01:12:49 by lbordona         ###   ########.fr       */
+/*   Updated: 2024/01/22 14:17:20 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@ void	print_philo_status(t_philo *philo, char *status)
 	long long	now;
 
 	pthread_mutex_lock(&philo->main->mutex);
-	if (philo->main->dead >= 1 || philo->main->all_ate == philo->main->num_philo)
+	if (philo->main->dead >= 1
+		|| philo->main->all_ate == philo->main->num_philo)
 	{
 		pthread_mutex_unlock(&philo->main->mutex);
 		return ;
