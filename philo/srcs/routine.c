@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 23:46:54 by lbordona          #+#    #+#             */
-/*   Updated: 2024/01/22 14:17:20 by lbordona         ###   ########.fr       */
+/*   Updated: 2024/01/22 18:56:51 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	*routine(void *arg)
 		return (NULL);
 	}
 	if (philo->id % 2 == 0)
-		usleep(2000);
+		usleep(10);
 	while (philo->main->dead == 0)
 	{
 		if (grab_forks(philo))

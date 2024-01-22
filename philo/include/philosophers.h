@@ -6,20 +6,20 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 21:23:47 by lbordona          #+#    #+#             */
-/*   Updated: 2024/01/18 01:03:02 by lbordona         ###   ########.fr       */
+/*   Updated: 2024/01/22 18:47:14 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PHILOSOPHERS_H
 # define PHILOSOPHERS_H
 
-#include <stdio.h>
-#include <unistd.h>
-#include <stdlib.h>
-#include <string.h>
-#include <limits.h>
-#include <pthread.h>
-#include <sys/time.h>
+# include <stdio.h>
+# include <unistd.h>
+# include <stdlib.h>
+# include <string.h>
+# include <limits.h>
+# include <pthread.h>
+# include <sys/time.h>
 
 typedef struct s_main
 {
