@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 23:18:28 by lbordona          #+#    #+#             */
-/*   Updated: 2024/01/18 01:06:21 by lbordona         ###   ########.fr       */
+/*   Updated: 2024/01/23 21:37:29 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ void	join_threads(t_main *main)
 	{
 		if (pthread_join(main->philo[i].thread, NULL))
 			printf("%s\n", "Error joinning thread for philo");
-		usleep(100);
 		i++;
 	}
 	i = 0;

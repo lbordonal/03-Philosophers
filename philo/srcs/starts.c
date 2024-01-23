@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 22:17:02 by lbordona          #+#    #+#             */
-/*   Updated: 2024/01/18 01:04:57 by lbordona         ###   ########.fr       */
+/*   Updated: 2024/01/23 21:38:12 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,6 @@ void	start_threads(t_main *main)
 		if (pthread_create(&main->philo[i].thread, NULL,
 				&routine, &main->philo[i]) != 0)
 			printf("%s\n", "Error creating thread for philo");
-		usleep(1000);
 		i++;
 	}
 	if (pthread_create(&main->checker, NULL, &checker, main) != 0)
