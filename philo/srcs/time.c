@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 23:27:53 by lbordona          #+#    #+#             */
-/*   Updated: 2024/01/17 23:28:25 by lbordona         ###   ########.fr       */
+/*   Updated: 2024/01/23 22:08:11 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,24 @@ long long	delta_time(long long time)
 	return (0);
 }
 
-void	exec_action(long long time)
+long int	get_time2(void)
 {
-	usleep(time * 1000);
+	struct timeval	ftime;
+	long int		time;
+
+	time = 0;
+	if (gettimeofday(&ftime, NULL))
+		return (-1);
+	time = (ftime.tv_sec * 1000) + (ftime.tv_usec / 1000);
+	return (time);
+}
+
+void	ft_usleep(long int miliseconds)
+{
+	long int	start;
+
+	start = 0;
+	start = get_time2();
+	while (get_time2() - start < miliseconds)
+		usleep(miliseconds / 10);
 }

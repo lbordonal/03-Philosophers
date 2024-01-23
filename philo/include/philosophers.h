@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 21:23:47 by lbordona          #+#    #+#             */
-/*   Updated: 2024/01/22 18:47:14 by lbordona         ###   ########.fr       */
+/*   Updated: 2024/01/23 22:07:40 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 # include <limits.h>
 # include <pthread.h>
 # include <sys/time.h>
+# include <stdint.h>
 
 typedef struct s_main
 {
@@ -70,8 +71,9 @@ void			join_threads(t_main *main);
 
 /* time.c: */
 long long		get_time(void);
+long int		get_time2(void);
 long long		delta_time(long long time);
-void			exec_action(long long time);
+void			ft_usleep(long int miliseconds);
 
 /* routine.c: */
 void			print_philo_status(t_philo *philo, char *status);

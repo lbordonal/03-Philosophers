@@ -6,7 +6,7 @@
 /*   By: lbordona <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 00:14:33 by lbordona          #+#    #+#             */
-/*   Updated: 2024/01/22 14:20:06 by lbordona         ###   ########.fr       */
+/*   Updated: 2024/01/23 22:07:45 by lbordona         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ int	is_eating(t_philo *ph)
 	}
 	pthread_mutex_unlock(&ph->main->mutex);
 	pthread_mutex_unlock(&ph->reaper);
-	exec_action(ph->main->tte);
+	ft_usleep(ph->main->tte);
 	pthread_mutex_unlock(ph->l_fork);
 	pthread_mutex_unlock(ph->r_fork);
 	return (0);
@@ -79,7 +79,7 @@ int	is_sleeping(t_philo *philo)
 	}
 	pthread_mutex_unlock(&philo->main->mutex);
 	print_philo_status(philo, "is sleeping.");
-	exec_action(philo->main->tts);
+	ft_usleep(philo->main->tts);
 	return (0);
 }
 
