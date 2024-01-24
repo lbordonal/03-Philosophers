@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-	<img src="https://img.shields.io/badge/score-not%20submitted-red?style=flat-square" />
+	<img src="https://img.shields.io/badge//score-100%20%2F%20100-success?style=flat-square" />
 	<img src="https://img.shields.io/github/languages/code-size/lbordonal/03-Philosophers?style=flat-square" />
 	<img src="https://img.shields.io/github/languages/count/lbordonal/03-Philosophers?style=flat-square" />
 	<img src="https://img.shields.io/github/languages/top/lbordonal/03-Philosophers?style=flat-square" />
@@ -11,7 +11,7 @@
 </p>
 
 <p align="center">
-This repository contains code developed at 42 Porto for Philosophers Project, from ... to ...
+This repository contains code developed at 42 Porto for Philosophers Project, from September/2023 to January/2024.
 </p>
 
 <img src="https://github.com/lbordonal/lbordonal/blob/main/.42_badges/philosophersn.png" align="right" />
@@ -21,6 +21,10 @@ This repository contains code developed at 42 Porto for Philosophers Project, fr
 <a href="https://github.com/lbordonal/03-Philosophers/blob/main/Subject/en.subject.pdf">Click here</a> for the subject of this project.
 <br /><br />
 
+
+<p align="center">
+README under construction, check again later!
+</p>
 
 <br />
 <br />
