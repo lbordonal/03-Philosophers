@@ -21,6 +21,10 @@ This repository contains code developed at 42 Porto for Philosophers Project, fr
 <a href="https://github.com/lbordonal/03-Philosophers/blob/main/Subject/en.subject.pdf">Click here</a> for the subject of this project.
 <br /><br />
 
+<br />
+<br />
+<br />
+<br />
 
 <p align="center">
 README under construction, check again later!
